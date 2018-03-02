@@ -11,12 +11,16 @@ class Image extends Model
 
 	public function actor(){
 		
-		return $this->morphedByMany('App\Actor', 'imagiable');
+		return $this->morphMany('App\Actor', 'imagable');
 	}
 	
 	public function movie(){
 		
-		return $this->morphedByMany('App\Movie', 'imagiable');
+		return $this->morphMany('App\Movie', 'imagable');
 	}
 	
+	public function related(){
+		
+		return $this->morphTo( 'imagable');
+	}
 }

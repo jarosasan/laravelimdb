@@ -80,7 +80,7 @@ class MovieAdminController extends Controller
 	    $actors = Actor::all();
 	    $categories = Category::all();
     	$data = ['movie'=> $movie,'categories' =>$categories, 'actors'=>$actors, 'selectedActors'=>$selectedActors];
-        return view('movie.form.movie_edit_form', $data);
+        return view('admin.form.movie_edit_form', $data);
     }
 
     /**

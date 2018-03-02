@@ -58,7 +58,7 @@
 					</select>
 				</div>
 				<a href="{{route('admin_movie')}}" class="btn btn-default">Cancel</a>
-				<a href="{{route('create_movies_image', $movie->id)}}" class="btn btn-default">Add image</a>
+				<a href="{{route('admin_image_form', $movie->id)}}" class="btn btn-default">Add image</a>
 				<button type="submit" class="btn btn-primary btn-raised">Save</button>
 			</form>
 			<div class="admin-gallery">

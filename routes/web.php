@@ -23,7 +23,6 @@ Route::get('/movies', 'MovieController@index')->name('movies');
 Route::get('/actors', 'ActorsController@index')->name('actors');
 Route::get('/actors/images/{id}', 'ActorsController@show')-> name('show_actor');
 Route::get('/movie/images/{id}', 'MovieController@show')->name('show_movie');
-//Route ::put('/movie/images/{id}', 'MovieController@storeMovieRating')->name('store_movie_rating');
 Route::post('/movies/search', 'MovieController@searchMovies')->name('search_movies');
 Route::get('/fb/login', 'FacebookController@redirect')->name('facebook_redirect');
 Route::get('/fb/callback', 'FacebookController@callback')->name('facebook_callback');
@@ -34,7 +33,6 @@ Route::middleware('auth')->group(function() {
 		Route ::post('actor/image/{id}', 'ImageController@storeActorImages')-> name('store_actor_image');
 		Route ::get('/movies/images/form/{id}' , 'ImageController@createMoviesImages')-> name('create_movies_image');
 		Route ::post('/movie/images/{id}', 'ImageController@storeMovieImages')->name('store_movie_images');
-		Route ::put('/movie/images/{id}', 'MovieController@storeMovieRating')->name('store_movie_rating');
 		Route ::put('/movie/images/{id}', 'MovieController@storeMovieRating')->name('store_movie_rating');
 		
 	});
@@ -54,7 +52,6 @@ Route::middleware('auth', 'role:admin')->group(function(){
 	Route::get('/admin/movies', 'Admin\MovieAdminController@index')->name('admin_movie');
 	Route::get('/admin/movies/create', 'Admin\MovieAdminController@create')->name('create_movie');
 	Route::post('/admin/movies', 'Admin\MovieAdminController@store')->name('store_movie');
-	
 	Route::get('/admin/movies/edit/{id}', 'Admin\MovieAdminController@edit')->name('edit_movie');
 	Route::put('/admin/movies/{id}', 'Admin\MovieAdminController@update')->name('update_movie');
 	Route::delete('/admin/movies/{id}', 'Admin\MovieAdminController@destroy')->name('delete_movie');
@@ -70,9 +67,13 @@ Route::middleware('auth', 'role:admin')->group(function(){
 	Route::delete('/admin/actors/{id}', 'ActorsController@destroy')->name('delete_actor');
 	
 	//Images
-	Route::delete('/admin/movies/edit/{id}', 'ImageController@destroy')->name('delete_image');
+	Route::delete('/admin/movies/edit/{id}', 'Admin\ImageAdminController@destroy')->name('delete_image');
+	Route::get('/admin/movie/image/form/{id}', 'Admin\ImageAdminController@createMoviesImages')->name('admin_image_form');
+	Route::post('/admin/movie/edit/{id}', 'Admin\ImageAdminController@storeMovieImages')->name('store_admin_movie_images');
 	
-//	Users
+	
+	
+//	Userssto
 	Route::get('/admin/users', 'Admin\AdminUserController@index')->name('admin_users');
 	Route::get('/admin/user/edit/{id}', 'Admin\AdminUserController@edit')->name('edit_user');
 	Route::put('/admin/users', 'Admin\AdminUserController@update')->name('update_user');

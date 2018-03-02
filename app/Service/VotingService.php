@@ -10,10 +10,10 @@
 		
 		public function hasVouted( $user, $movie) {
 			
-			$rating = Rating::where([['user_id', '=', $user->id], ['movie_id', '=', $movie->id]] )->count();
-			return ($rating > 0) ? false : true;
+			if (isset($user)){
+				$rating = Rating::where([['user_id', '=', $user->id], ['movie_id', '=', $movie->id]] )->count();
+				return ($rating > 0 ) ? false : true;
+			}
 			
 		}
-		
-		
 	}

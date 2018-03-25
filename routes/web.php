@@ -11,12 +11,12 @@
 |
 */
 
-Route::get('/', 'MovieController@index')->name('movies');;
+Route::get('/', 'MovieController@index')->name('');;
 
 Auth::routes();
 
 //Gests
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 Route::get('/category', 'CategoryController@index')->name('category');
 Route::get('/movies/category/{id}', 'MovieController@categoryMovies')->name('movie_from_category');
 Route::get('/movies', 'MovieController@index')->name('movies');

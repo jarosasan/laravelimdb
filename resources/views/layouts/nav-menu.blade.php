@@ -2,7 +2,7 @@
 	<nav class="navbar justify-content-between">
 		<ul class="nav nav-tabs ">
 			<li class="nav-item">
-				<a class="nav-link " href="{{route('movies')}}">Home</a>
+				<a class="nav-link " href="{{route('home')}}">Home</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="{{ route('category') }}">Categories</a>

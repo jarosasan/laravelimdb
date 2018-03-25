@@ -25,7 +25,7 @@ class MovieController extends Controller
     	$movies = Movie::paginate(12);
 	    $data = ['movies'=> $movies];
 	
-	    return view('movie.movie', $data);
+	    return view('home', $data);
     }
 	
 	/**

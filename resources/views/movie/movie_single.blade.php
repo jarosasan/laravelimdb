@@ -39,29 +39,32 @@
 					</div>
 					<div class="col-12">
 						<div class="row">
-							<div class="col-8 stars">
+							<div class="col-9 stars">
 								@inject('voting', 'App\Service\VotingService')
 								@if($voting->hasVouted(\Illuminate\Support\Facades\Auth::user(), $movie))
 
 								<form action="{{route('store_movie_rating', $movie->id)}}" method="post">
 									{!! csrf_field() !!}
 									{!! method_field('PUT') !!}
-									<input value="5" class="star star-5" id="star-5" type="radio" name="rating"/>
-									<label class="star star-5" for="star-5"></label>
-									<input value="4" class="star star-4" id="star-4" type="radio" name="rating"/>
-									<label class="star star-4" for="star-4"></label>
-									<input value="3" class="star star-3" id="star-3" type="radio" name="rating"/>
-									<label class="star star-3" for="star-3"></label>
-									<input value="2" class="star star-2" id="star-2" type="radio" name="rating"/>
-									<label class="star star-2" for="star-2"></label>
-									<input value="1" class="star star-1" id="star-1" type="radio" name="rating"/>
-									<label class="star star-1" for="star-1"></label>
-									<button type="submit">Voute</button>
+									<fieldset class="rating">
+										<input type="radio" id="star5" name="rating" value="5" />
+										<label for="star5" title="Rocks!">5 stars</label>
+										<input type="radio" id="star4" name="rating" value="4" />
+										<label for="star4" title="Pretty good">4 stars</label>
+										<input type="radio" id="star3" name="rating" value="3" />
+										<label for="star3" title="Meh">3 stars</label>
+										<input type="radio" id="star2" name="rating" value="2" />
+										<label for="star2" title="Kinda bad">2 stars</label>
+										<input type="radio" id="star1" name="rating" value="1" />
+										<label for="star1" title="Sucks big time">1 star</label>
+										<button
+												class="waves-effect waves-light btn vote"	type="submit">Voute</button>
+									</fieldset>
 								</form>
 								@endif
 							</div>
-							<div class="col-4">
-								<i class="mdi mdi-star rating">{{number_format($movie->rating, 1, '.', '') }}</i>
+							<div class="col-3 rat">
+								<i class="mdi mdi-star">{{number_format($movie->rating, 1, '.', '') }}</i>
 							</div>
 						</div>
 					</div>
@@ -71,15 +74,12 @@
 					@for($i = 0; $i < $images->count(); $i ++ )
 						<img src="{{ asset('storage/images/'.$images[$i]->file_name) }}" alt="..." class="img-thumbnail">
 					@endfor
+					@if(Auth::check())
+							<a class="btn vote" href="{{route('create_movies_image', $movie->id)}}" >Add Image</a>
+					@endif
 				</div>
 			</div>
 			</div>
-
-			@if(Auth::check())
-			<div>
-				<a class="btn btn-primary btn-block" href="{{route('create_movies_image', $movie->id)}}" >Add Image</a>
-			</div>
-			@endif
 		</div>
 	</div>
 </div>

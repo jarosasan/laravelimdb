@@ -18,7 +18,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 .cont{
-
+  min-height: 100vh;
   background-image: url("https://flashbak.com/wp-content/uploads/2014/07/collage-copy.jpg");
   background-size: cover;
   background-color: #1a237e;
@@ -31,6 +31,7 @@
     background-color: rgba(0, 0, 0, 0.9);
     top:0;
     bottom:0;
+    min-height: 100vh;
   }
 }
 .admin-body{
@@ -101,13 +102,16 @@
 
 
 .top-menu{
-   background-color:#1a237e;
+   background-color:#007bff;
+   color:lightgrey;
+  .navbar{
+    padding: 0 1rem !important;
+  }
  }
 .nav-tabs{
    .nav-link{
-     color: #3d5afe;
+     color: red;
    }
-
  }
 
 .top-admin-menu{
@@ -115,9 +119,8 @@
 }
 .nav-tabs{
   .nav-link{
-    color: grey;
+    color: #fff;
   }
-
 }
 
  .forms{
@@ -304,4 +307,40 @@ form{
 .pagination{
   align-content: center;
   margin: 20px auto;
+}
+.actors{
+  padding: 5px;
+  a{
+    text-decoration:none;
+    .cat-box{
+      position: relative;
+      height: 25em;
+      box-sizing: border-box;
+      border: 2px solid whitesmoke;
+      -webkit-border-radius: 2px;
+      -moz-border-radius: 2px;
+      border-radius: 2px;
+      padding: 0;
+      text-align: center;
+      h3{
+
+      }
+    }
+  }
+}
+.cel{
+  padding: 5px;
+  top: 50%;
+  a {
+    text-decoration: none;
+    .categories {
+      background-color: rgba(48, 60, 72, 0.8);
+      box-sizing: border-box;
+      border: 1px solid #434343;
+      -webkit-box-shadow: 3px 3px 3px #303C48;
+      -moz-box-shadow: 3px 3px 3px #303C48;
+      box-shadow: 3px 3px 3px #303C48;
+      padding: 10px;
+    }
+  }
 }

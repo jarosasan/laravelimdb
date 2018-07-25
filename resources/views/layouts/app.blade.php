@@ -26,11 +26,6 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
@@ -41,20 +36,15 @@
                             <li class="nav-item ">
                                 {{ Auth::user()->name }}
                             </li>
-                                {{--<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
-                                    {{--{{ Auth::user()->name }} <span class="caret"></span>--}}
-                                {{--</a>--}}
                                 <li class="nav-item">
                                     <a class="" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                            document.getElementById('logout-form').submit();">
                                         <span><i class="mdi mdi-logout"></i></span>
                                     </a>
-
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
-
                                 </li>
                         @endguest
                     </ul>
@@ -64,12 +54,10 @@
        <div class="container-fluid  top-menu">
            @include('layouts.nav-menu')
        </div>
-
         <main class="cont">
             <div class="row">
                 @yield('content')
             </div>
-
         </main>
     </div>
 

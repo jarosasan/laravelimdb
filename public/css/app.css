@@ -39323,6 +39323,7 @@ h6 {
 }
 
 .cont {
+  min-height: 100vh;
   background-image: url("https://flashbak.com/wp-content/uploads/2014/07/collage-copy.jpg");
   background-size: cover;
   background-color: #1a237e;
@@ -39337,6 +39338,7 @@ h6 {
   background-color: rgba(0, 0, 0, 0.9);
   top: 0;
   bottom: 0;
+  min-height: 100vh;
 }
 
 .admin-body {
@@ -39405,11 +39407,16 @@ h6 {
 }
 
 .top-menu {
-  background-color: #1a237e;
+  background-color: #007bff;
+  color: lightgrey;
+}
+
+.top-menu .navbar {
+  padding: 0 1rem !important;
 }
 
 .nav-tabs .nav-link {
-  color: #3d5afe;
+  color: red;
 }
 
 .top-admin-menu {
@@ -39417,7 +39424,7 @@ h6 {
 }
 
 .nav-tabs .nav-link {
-  color: grey;
+  color: #fff;
 }
 
 .forms {
@@ -39617,5 +39624,43 @@ form select {
   -ms-flex-line-pack: center;
       align-content: center;
   margin: 20px auto;
+}
+
+.actors {
+  padding: 5px;
+}
+
+.actors a {
+  text-decoration: none;
+}
+
+.actors a .cat-box {
+  position: relative;
+  height: 25em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 2px solid whitesmoke;
+  border-radius: 2px;
+  padding: 0;
+  text-align: center;
+}
+
+.cel {
+  padding: 5px;
+  top: 50%;
+}
+
+.cel a {
+  text-decoration: none;
+}
+
+.cel a .categories {
+  background-color: rgba(48, 60, 72, 0.8);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid #434343;
+  -webkit-box-shadow: 3px 3px 3px #303C48;
+  box-shadow: 3px 3px 3px #303C48;
+  padding: 10px;
 }
 

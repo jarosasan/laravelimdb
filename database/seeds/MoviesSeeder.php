@@ -18,7 +18,7 @@ class MoviesSeeder extends Seeder
     public function run() {
 	    $categories = new Category();
 	
-	    for ( $i = 850; $i < 900; $i ++ ) {
+	    for ( $i = 860; $i < 900; $i ++ ) {
 		    try {
 		    	echo "uzklausa";
 			    $content = file_get_contents( 'https://api.themoviedb.org/3/movie/' . $i . '?api_key=1241492df1b7de6199062c478cd93274&language=en-US' );

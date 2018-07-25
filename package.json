@@ -12,14 +12,15 @@
     "devDependencies": {
         "axios": "^0.17",
         "bootstrap": "^4.0.0",
-        "popper.js": "^1.12",
+        "bootstrap-material-design": "^4.1.1",
         "cross-env": "^5.1",
+        "gulp": "^3.9.1",
         "jquery": "^3.2",
         "laravel-mix": "^2.0",
         "lodash": "^4.17.4",
-        "vue": "^2.5.7",
-        "bootstrap-material-design": "^4.1.1",
-        "mdi": "^2.1.19"
+        "mdi": "^2.1.19",
+        "popper.js": "^1.12",
+        "vue": "^2.5.7"
     },
     "dependencies": {
         "select2": "^4.0.6-rc.1"
